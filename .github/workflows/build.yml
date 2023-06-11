@@ -21,14 +21,14 @@ jobs:
       - run: |
           sudo apt-get update && \
           sudo apt-get -y --no-install-recommends install \
-              build-essential \
-              bison \
-              flex \
-              libssl-dev \
-              libelf-dev \
-              bc \ 
-              curl \
-              ca-certificates && \
+          build-essential \
+          bison \
+          flex \
+          libssl-dev \
+          libelf-dev \
+          bc \ 
+          curl \
+          ca-certificates && \
           sudo apt-get clean && \
           sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
           
