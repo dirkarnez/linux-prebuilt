@@ -19,16 +19,33 @@ jobs:
       - uses: actions/checkout@v3
 
       - run: |
-          sudo apt-get update && \
-          sudo apt-get -y --no-install-recommends install \
-          build-essential \
-          bison \
-          flex \
-          libssl-dev \
-          libelf-dev \
-          bc \ 
-          curl \
-          ca-certificates && \
+          sudo apt-get update
+          
+      - run: |
+          sudo apt-get -y --no-install-recommends install build-essential
+          
+      - run: |
+          sudo apt-get -y --no-install-recommends install bison
+          
+      - run: |
+          sudo apt-get -y --no-install-recommends install flex
+        
+      - run: |
+          sudo apt-get -y --no-install-recommends install libssl-dev
+          
+      - run: |
+          sudo apt-get -y --no-install-recommends install libelf-dev
+          
+      - run: |
+          sudo apt-get -y --no-install-recommends install bc
+          
+      - run: |
+          sudo apt-get -y --no-install-recommends install curl
+          
+      - run: |
+          sudo apt-get -y --no-install-recommends install ca-certificates
+          
+      - run: |
           sudo apt-get clean && \
           sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
           
