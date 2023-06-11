@@ -19,8 +19,8 @@ jobs:
       - uses: actions/checkout@v3
 
       - run: |
-          apt-get update -y \ 
-          && apt-get -y --no-install-recommends install \
+          sudo apt-get update && \
+          sudo apt-get -y --no-install-recommends install \
               build-essential \
               bison \
               flex \
@@ -28,9 +28,9 @@ jobs:
               libelf-dev \
               bc \ 
               curl \
-              ca-certificates \
-          && apt-get clean \
-          && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+              ca-certificates && \
+          sudo apt-get clean && \
+          sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
           
       - run: |
           curl https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.12.10.tar.xz -L -O -J && \
